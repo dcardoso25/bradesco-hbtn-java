@@ -37,7 +37,7 @@ public class Pedido {
             double precoLiquido = itens[i].getProduto().obterPrecoLiquido();
             totalProdutos += precoLiquido * quantidade;
 
-            System.out.printf("Tipo: %s Titulo: %s Preco: %.2f  Quant: %s  Total: %.2f\n",
+            System.out.printf("Tipo: %s  Titulo: %s  Preco: %.2f  Quant: %s  Total: %.2f\n",
                     type, title, precoLiquido, quantidade, quantidade * precoLiquido);
         }
         double totalDesconto = totalProdutos * percentualDesconto / 100;
