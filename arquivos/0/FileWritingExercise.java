@@ -12,6 +12,7 @@ public class FileWritingExercise {
         System.out.print("Digite o nome do arquivo (com extensão .txt): ");
         String fileName = scanner.nextLine();
 
+
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(fileName))) {
             boolean finished = false;
             while (scanner.hasNextLine() && !finished) {
@@ -19,7 +20,7 @@ public class FileWritingExercise {
                 if (line.equals("sair")) {
                     finished = true;
                     System.out.println("Arquivo " + fileName + " foi salvo com sucesso!");
-                    continue;
+                    break;
                 }
                 if (!finished) {
                     bw.write(line);
