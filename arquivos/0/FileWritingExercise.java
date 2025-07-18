@@ -17,16 +17,11 @@ public class FileWritingExercise {
             boolean finished = false;
             while (scanner.hasNextLine() && !finished) {
                 String line = scanner.nextLine();
-                if (line.equals("sair")) {
-                    finished = true;
-                    System.out.println("Arquivo " + fileName + " foi salvo com sucesso!");
-                    break;
-                }
-                if (!finished) {
-                    bw.write(line);
-                    bw.newLine();
-                }
+                if (line.equals("sair")) break;
+                bw.write(line);
+                bw.newLine();
             }
+            System.out.println("Arquivo " + fileName + " foi salvo com sucesso!");
 
         } catch (java.lang.Exception e) {
             throw new RuntimeException(e);
