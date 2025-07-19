@@ -97,6 +97,13 @@ public class Estoque {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(this.filename))) {
             for (String line : lines) {
                 String[] split = line.split(",");
+
+                // Garante que existem pelo menos 4 colunas: id, nome, quantidade, preco
+                if (split.length < 4) {
+                    continue; // ou loga, ou trata de outra forma
+                }
+
+
                 String id = split[0].toString();
                 String nome = split[1].toString();
                 int quantidade = novaQuantidade;
