@@ -9,7 +9,7 @@ public class FileReadingExercise {
         try (
                 BufferedReader br = new BufferedReader(new FileReader(fileName))
         ){
-            System.out.println("Conteudo do arquivo:\n");
+            System.out.println("Conteúdo do arquivo 'exemplo.txt':\n");
             String line;
             while ((line = br.readLine()) != null) {
                 System.out.println(line);
