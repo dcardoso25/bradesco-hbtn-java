@@ -16,7 +16,7 @@ public class CsvFileReader {
                 System.out.printf("Salarial: %s\n", data[3]);
                 System.out.println("------------------------");
             }
-            System.out.println("Leitura do arquivo concluída.\n");
+            System.out.println("Leitura do arquivo concluída.");
         } catch (Exception e) {
             e.printStackTrace();
         }
