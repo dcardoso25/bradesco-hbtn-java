@@ -74,7 +74,16 @@ public class Estoque {
         try (BufferedReader br = new BufferedReader(new FileReader(this.filename))) {
             String line;
             while ((line = br.readLine()) != null) {
-                System.out.println(line);
+                String[] split = line.split(",");
+                String id = split[0].toString();
+                String nome = split[1].toString();
+                int quantidade = Integer.parseInt(split[2].toString());
+                double preco = Double.parseDouble(split[3].toString());
+
+                Produto produto = new Produto(Integer.parseInt(id), nome, quantidade, preco);
+                String output = produto.toString();
+                System.out.println(output);
+
             }
         } catch (IOException e) {
             e.printStackTrace();
