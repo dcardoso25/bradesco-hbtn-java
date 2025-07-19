@@ -15,9 +15,25 @@ public class Estoque {
     }
 
     public void adicionarProduto(String nome, int quantidade, double preco) {
+
+        int latestId = 0;
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(this.filename))) {
+
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] split = line.split(",");
+                latestId = Integer.parseInt(split[0]);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        latestId++;
+
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(this.filename, true))){
 
-            Produto produto = new Produto(5, nome, quantidade, preco);
+            Produto produto = new Produto(latestId, nome, quantidade, preco);
             bw.newLine();
             bw.write(produto.toCsv());
         } catch (java.lang.Exception e) {
