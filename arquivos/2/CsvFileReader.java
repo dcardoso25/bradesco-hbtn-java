@@ -10,7 +10,7 @@ public class CsvFileReader {
             while ((line = br.readLine()) != null) {
                 // Nome,Idade,Departamento,Salarial
                 String[] data = line.split(",");
-                System.out.printf("Nome: %s\n", data[0]);
+                System.out.printf("Funcionário: %s\n", data[0]);
                 System.out.printf("Idade: %s\n", data[1]);
                 System.out.printf("Departamento: %s\n", data[2]);
                 System.out.printf("Salarial: %s\n", data[3]);
