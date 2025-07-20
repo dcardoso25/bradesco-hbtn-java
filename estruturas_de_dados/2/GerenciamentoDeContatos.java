@@ -51,7 +51,6 @@ public class GerenciamentoDeContatos {
         Contato contato = contatos.get(nome);
         System.out.println("Contato encontrado: " + nome);
         contato.exibirContato();
-        System.out.println();
     }
 
 
@@ -63,13 +62,8 @@ public class GerenciamentoDeContatos {
         } else {
             System.out.println("Contato "+ nome +" não encontrado.");
         }
-
         contatos.remove(nome);
-
-
-        System.out.println();
     }
-
 
     public static void main(String[] args) {
         GerenciamentoDeContatos gestao = new GerenciamentoDeContatos();
