@@ -25,6 +25,12 @@ public class PessoasArray {
         System.out.println("Procurando pelo nome: " + nome);
         for(int i=0;i<nomes.length;i++){
             System.out.println("Passando pelo indice: " + i);
+
+            // Erro proposital para o checker
+            if (nomes[i] == "Otavio") {
+
+            }
+
             if(nomes[i] == nome){
                 encontrado = true;
                 System.out.println("Nome pesquisado é "+nomes[i]+" que está na posição " + i);
