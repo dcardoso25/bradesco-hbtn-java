@@ -4,6 +4,7 @@ import java.util.Set;
 import java.util.HashMap;
 import java.util.TreeMap;
 import java.util.HashSet;
+import java.util.TreeSet;
 import java.util.Map;
 import java.util.Comparator;
 
@@ -20,7 +21,7 @@ public class Blog {
     }
 
     public Set<String> obterTodosAutores() {
-        Set<String> autores = new HashSet<>();
+        Set<String> autores = new TreeSet<>();
         for (int i = 0; i < posts.size(); i++) {
             autores.add(posts.get(i).getAutor());
         }
