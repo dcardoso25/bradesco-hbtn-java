@@ -26,18 +26,21 @@ public class Blog {
     }
 
     public Map<String, Integer> obterContagemPorCategoria() {
-        Set<String> autores = obterTodosAutores();
+        Set<String> categorias = new HashSet<>();
+        for (int i = 0; i < posts.size(); i++) {
+            categorias.add(posts.get(i).getCategoria());
+        }
         Map<String, Integer> contagem = new HashMap<>();
 
-        for (String autor : autores) {
+        for (String categoria : categorias) {
             int postagens = 0;
             for (int i = 0; i < posts.size(); i++) {
-                String autorDaPostagem = posts.get(i).getAutor();
-                if (autor.equals(autorDaPostagem)) {
+                String categoriaDaPostagem = posts.get(i).getCategoria();
+                if (categoria.equals(categoriaDaPostagem)) {
                     postagens ++;
                 }
             }
-            contagem.put(autor, postagens);
+            contagem.put(categoria, postagens);
         }
         return contagem;
     }
