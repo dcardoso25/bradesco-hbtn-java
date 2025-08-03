@@ -4,10 +4,10 @@ import java.util.function.Predicate;
 
 public class ConsultaProdutos {
 
-    public static List<Produto> filtrar(List<Produto> produtos, Predicate<Produto> predicate) {
+    public static List<Produto> filtrar(List<Produto> produtos, CriterioFiltro criterioFiltro ) {
         List<Produto> output = new ArrayList<>();
         for (Produto produto: produtos) {
-            if (predicate.test(produto)) {
+            if (criterioFiltro.testar(produto)) {
                 output.add(produto);
             }
         }
