@@ -19,15 +19,10 @@ public class Consulta {
         return produtoMaiorPreco.get();
     }
 
-    public static List<Produto> obterProdutosPorPrecoMinimo(List<Produto> produtos, double precoMinimo) {
-        return produtos.stream()
-                .filter(e -> e.getPreco() > precoMinimo)
-                .collect(Collectors.toList());
-    }
-
-    public static List<Produto> obterPedidosComEletronicos(List<Pedido> pedidos) {
+    public static List<Pedido> obterPedidosComEletronicos(List<Pedido> pedidos) {
         return pedidos.stream()
-                .anyMatch(produto -> produto.getCategoria() == CategoriaProduto.ELETRONICO)
+                .filter(pedido -> pedido.getProdutos().stream()
+                        .anyMatch(produto -> produto.getCategoria() == CategoriaProduto.ELETRONICO))
                 .collect(Collectors.toList());
     }
 }
