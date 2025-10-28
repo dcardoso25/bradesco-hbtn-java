@@ -1,6 +1,7 @@
 import java.util.LinkedList;
 import java.util.Random;
 
+
 public class Fila {
     private final LinkedList<Integer> fila = new LinkedList<>();
     private final int capacidade;
